@@ -1,0 +1,24 @@
+package dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import connectivity.DBConnection;
+import model.User;
+
+public class UserDao {
+	Session session = null;
+	Transaction tx = null;
+	List<User> list = null;
+
+	public void insertUser(User u) {
+		session = new DBConnection().getSession();
+		tx = session.beginTransaction();
+		session.save(u);
+		tx.commit();
+		session.close();
+		System.out.println("data inserted");
+	}
+}

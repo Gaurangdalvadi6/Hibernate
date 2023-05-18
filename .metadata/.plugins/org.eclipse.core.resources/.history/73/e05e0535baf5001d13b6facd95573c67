@@ -1,0 +1,9 @@
+package ManyToMany;
+
+import java.util.List;
+
+public class student {
+private int id;
+private String name;
+private List<teacher>
+}
